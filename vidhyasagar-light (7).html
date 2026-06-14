@@ -602,6 +602,10 @@ footer{background:linear-gradient(160deg,var(--navy) 0%,#062356 100%);color:rgba
   .img-showcase-left img{height:320px}
 }
 @media(max-width:768px){
+  .container{padding:0 16px}
+  #cur-dot,#cur-ring{display:none!important}
+  body{cursor:auto!important}
+  * {cursor:auto!important}
   .nav-links,.nav-right{display:none}
   .hamburger{display:flex}
   .hero-inner{grid-template-columns:1fr;text-align:center}
@@ -618,8 +622,8 @@ footer{background:linear-gradient(160deg,var(--navy) 0%,#062356 100%);color:rgba
   .podium-row{grid-template-columns:1fr}
   .res-grid{grid-template-columns:1fr 1fr}
   .testi-grid{grid-template-columns:1fr}
-  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
-  .gi{grid-column:auto!important;grid-row:auto!important}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;gap:12px}
+  .gi{grid-column:auto!important;grid-row:auto!important;aspect-ratio:4/3;height:auto}
   .gi .gi-placeholder{height:180px}
   .faq-in{grid-template-columns:1fr}
   .contact-in{grid-template-columns:1fr}
