@@ -685,6 +685,238 @@ footer{background:linear-gradient(160deg,var(--navy) 0%,#062356 100%);color:rgba
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 .tp-av { position: relative; }
+
+/* ─── ADMIN DASHBOARD STYLES ─── */
+.admin-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 42, 74, 0.96);
+  backdrop-filter: blur(16px);
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease);
+  color: #F0FAFF;
+}
+.admin-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.admin-login-card {
+  background: rgba(20, 119, 200, 0.05);
+  border: 1px solid var(--border);
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--sh2);
+  text-align: center;
+}
+.admin-login-card h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--sky2);
+  margin-bottom: 8px;
+}
+.admin-login-card p {
+  color: var(--txt3);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.admin-login-card .fg {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.admin-login-card .fg label {
+  color: var(--sky-lt);
+  font-size: 13px;
+  margin-bottom: 6px;
+  display: block;
+}
+.admin-login-card .fg input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: rgba(10, 42, 74, 0.6);
+  border: 1px solid var(--border);
+  color: #fff;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+.admin-login-card .fg input:focus {
+  border-color: var(--sky);
+  outline: none;
+}
+.admin-login-card button {
+  width: 100%;
+  padding: 14px;
+  background: var(--gold);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.admin-login-card button:hover {
+  background: var(--gold2);
+}
+.admin-dashboard {
+  width: 92%;
+  max-width: 1200px;
+  height: 85vh;
+  background: rgba(10, 42, 74, 0.85);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--sh2);
+}
+.admin-dash-header {
+  padding: 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(20, 119, 200, 0.05);
+}
+.admin-dash-header h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--sky2);
+  margin: 0;
+}
+.admin-dash-header .actions {
+  display: flex;
+  gap: 12px;
+}
+.admin-dash-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 24px;
+}
+.admin-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(168, 218, 250, 0.2);
+  padding-bottom: 12px;
+}
+.admin-tab {
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  background: rgba(168, 218, 250, 0.1);
+  color: var(--sky-lt);
+  border: 1px solid transparent;
+  transition: all 0.3s;
+}
+.admin-tab.active {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--sky);
+}
+.admin-filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.admin-search {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: rgba(10, 42, 74, 0.6);
+  border: 1px solid var(--border);
+  color: #fff;
+  font-size: 14px;
+}
+.admin-search:focus {
+  border-color: var(--sky);
+  outline: none;
+}
+.admin-table-container {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid rgba(168, 218, 250, 0.2);
+  border-radius: 12px;
+  background: rgba(10, 42, 74, 0.4);
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+.admin-table th, .admin-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(168, 218, 250, 0.1);
+}
+.admin-table th {
+  background: rgba(20, 119, 200, 0.15);
+  color: var(--sky2);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.admin-table tr:hover {
+  background: rgba(168, 218, 250, 0.05);
+}
+.admin-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.admin-badge-gold { background: rgba(212, 135, 10, 0.2); color: var(--gold2); border: 1px solid var(--gold); }
+.admin-badge-blue { background: rgba(20, 119, 200, 0.2); color: var(--sky); border: 1px solid var(--blue); }
+.admin-badge-green { background: rgba(37, 211, 102, 0.2); color: #25D366; border: 1px solid #25D366; }
+.admin-close-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--sky-lt);
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.admin-close-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  color: #fff;
+}
+.admin-btn {
+  background: var(--blue);
+  color: #fff;
+  border: 1px solid var(--sky);
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.admin-btn:hover {
+  background: var(--blue2);
+}
+.admin-table td button {
+  background: transparent;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+.admin-table td button:hover {
+  background: #ef4444;
+  color: #fff;
+}
 </style>
 </head>
 <body>
@@ -1853,9 +2085,335 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+// ─── ADMIN DASHBOARD CONTROLLER ───
+let adminSessionToken = null;
+let adminCurrentTab = 'scholarships';
+let adminDataCache = [];
+
+// Triggering mechanics
+window.addEventListener('hashchange', checkUrlHash);
+window.addEventListener('load', checkUrlHash);
+document.addEventListener('keydown', (e) => {
+  if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+    e.preventDefault();
+    toggleAdminPanel(true);
+  }
+});
+
+function checkUrlHash() {
+  if (window.location.hash === '#admin') {
+    toggleAdminPanel(true);
+  }
+}
+
+function toggleAdminPanel(show) {
+  const overlay = document.getElementById('adminOverlay');
+  if (show) {
+    overlay.classList.add('active');
+    const cachedToken = sessionStorage.getItem('supabase_admin_token');
+    if (cachedToken) {
+      adminSessionToken = cachedToken;
+      showDashboard();
+    } else {
+      showLogin();
+    }
+  } else {
+    overlay.classList.remove('active');
+    if (window.location.hash === '#admin') {
+      history.replaceState(null, null, ' ');
+    }
+  }
+}
+
+function showLogin() {
+  document.getElementById('adminLoginCard').style.display = 'block';
+  document.getElementById('adminDashboard').style.display = 'none';
+}
+
+function showDashboard() {
+  document.getElementById('adminLoginCard').style.display = 'none';
+  document.getElementById('adminDashboard').style.display = 'flex';
+  loadAdminData();
+}
+
+async function handleAdminLogin() {
+  const email = document.getElementById('adminEmail').value.trim();
+  const password = document.getElementById('adminPassword').value.trim();
+  
+  if (!email || !password) {
+    showToast('Please enter both email and password.');
+    return;
+  }
+  
+  const loginBtn = document.querySelector('#adminLoginCard button');
+  loginBtn.innerText = 'Logging In...';
+  loginBtn.disabled = true;
+  
+  try {
+    const response = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    });
+    
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error_description || errorData.error || 'Authentication failed');
+    }
+    
+    const data = await response.json();
+    adminSessionToken = data.access_token;
+    sessionStorage.setItem('supabase_admin_token', adminSessionToken);
+    showDashboard();
+  } catch (error) {
+    console.error('Admin Auth Error:', error);
+    showToast(error.message || 'Login failed. Please check credentials or network.');
+  } finally {
+    loginBtn.innerText = 'Log In';
+    loginBtn.disabled = false;
+  }
+}
+
+function handleAdminLogout() {
+  adminSessionToken = null;
+  sessionStorage.removeItem('supabase_admin_token');
+  showLogin();
+}
+
+function switchAdminTab(tab) {
+  adminCurrentTab = tab;
+  document.getElementById('tabScholarships').classList.toggle('active', tab === 'scholarships');
+  document.getElementById('tabInquiries').classList.toggle('active', tab === 'inquiries');
+  document.getElementById('adminSearchInput').value = '';
+  loadAdminData();
+}
+
+async function loadAdminData() {
+  const tableBody = document.getElementById('adminTableBody');
+  tableBody.innerHTML = '<tr><td colspan="10" style="text-align:center;">Loading records...</td></tr>';
+  
+  const headers = {
+    'apikey': SUPABASE_ANON_KEY,
+    'Authorization': `Bearer ${adminSessionToken}`
+  };
+  
+  try {
+    const endpoint = adminCurrentTab === 'scholarships' ? 'scholarships' : 'inquiries';
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/${endpoint}?order=created_at.desc`, {
+      headers
+    });
+    
+    if (!response.ok) throw new Error('Failed to fetch data');
+    
+    adminDataCache = await response.json();
+    renderAdminData(adminDataCache);
+  } catch (error) {
+    console.error('Data Fetch Error:', error);
+    tableBody.innerHTML = '<tr><td colspan="10" style="text-align:center;color:#ef4444;">Failed to fetch data. Ensure RLS Policies allow select.</td></tr>';
+  }
+}
+
+function renderAdminData(data) {
+  const tableHead = document.getElementById('adminTableHead');
+  const tableBody = document.getElementById('adminTableBody');
+  
+  if (data.length === 0) {
+    tableBody.innerHTML = '<tr><td colspan="10" style="text-align:center;">No submissions found.</td></tr>';
+    return;
+  }
+  
+  if (adminCurrentTab === 'scholarships') {
+    tableHead.innerHTML = `
+      <tr>
+        <th>Student Name</th>
+        <th>Mobile Number</th>
+        <th>Parent / Guardian</th>
+        <th>School Name</th>
+        <th>Board</th>
+        <th>Grade</th>
+        <th>Olympiad</th>
+        <th>Submitted At</th>
+        <th>Action</th>
+      </tr>
+    `;
+    
+    tableBody.innerHTML = data.map(row => `
+      <tr data-row-id="${row.id}">
+        <td><strong>${escapeHtml(row.student_name)}</strong></td>
+        <td><a href="tel:${escapeHtml(row.mobile_number)}" style="color:var(--sky2);text-decoration:underline">${escapeHtml(row.mobile_number)}</a></td>
+        <td>${escapeHtml(row.parent_name)}</td>
+        <td>${escapeHtml(row.school_name)}</td>
+        <td><span class="admin-badge admin-badge-blue">${escapeHtml(row.board)}</span></td>
+        <td><span class="admin-badge admin-badge-gold">${escapeHtml(row.grade)}</span></td>
+        <td>${row.olympiad ? `<span class="admin-badge admin-badge-green">${escapeHtml(row.olympiad)}</span>` : '<span style="color:var(--txt3)">None</span>'}</td>
+        <td style="color:var(--sky-lt)">${new Date(row.created_at).toLocaleString()}</td>
+        <td><button onclick="deleteAdminRecord(${row.id})">Delete</button></td>
+      </tr>
+    `).join('');
+  } else {
+    tableHead.innerHTML = `
+      <tr>
+        <th>Name</th>
+        <th>Mobile Number</th>
+        <th>Student's Grade</th>
+        <th>Program Interest</th>
+        <th>Message</th>
+        <th>Submitted At</th>
+        <th>Action</th>
+      </tr>
+    `;
+    
+    tableBody.innerHTML = data.map(row => `
+      <tr data-row-id="${row.id}">
+        <td><strong>${escapeHtml(row.name)}</strong></td>
+        <td><a href="tel:${escapeHtml(row.mobile_number)}" style="color:var(--sky2);text-decoration:underline">${escapeHtml(row.mobile_number)}</a></td>
+        <td><span class="admin-badge admin-badge-gold">${escapeHtml(row.grade)}</span></td>
+        <td><span class="admin-badge admin-badge-blue">${escapeHtml(row.program || 'N/A')}</span></td>
+        <td style="max-width:250px;word-wrap:break-word">${escapeHtml(row.message || '—')}</td>
+        <td style="color:var(--sky-lt)">${new Date(row.created_at).toLocaleString()}</td>
+        <td><button onclick="deleteAdminRecord(${row.id})">Delete</button></td>
+      </tr>
+    `).join('');
+  }
+}
+
+function filterAdminData() {
+  const term = document.getElementById('adminSearchInput').value.toLowerCase().trim();
+  if (!term) {
+    renderAdminData(adminDataCache);
+    return;
+  }
+  
+  const filtered = adminDataCache.filter(row => {
+    if (adminCurrentTab === 'scholarships') {
+      return (row.student_name || '').toLowerCase().includes(term) || (row.mobile_number || '').includes(term);
+    } else {
+      return (row.name || '').toLowerCase().includes(term) || (row.mobile_number || '').includes(term);
+    }
+  });
+  
+  renderAdminData(filtered);
+}
+
+async function deleteAdminRecord(id) {
+  if (!confirm('Are you sure you want to permanently delete this record?')) return;
+  
+  const headers = {
+    'apikey': SUPABASE_ANON_KEY,
+    'Authorization': `Bearer ${adminSessionToken}`
+  };
+  
+  try {
+    const endpoint = adminCurrentTab === 'scholarships' ? 'scholarships' : 'inquiries';
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/${endpoint}?id=eq.${id}`, {
+      method: 'DELETE',
+      headers
+    });
+    
+    if (!response.ok) throw new Error('Deletion failed');
+    
+    showToast('Record deleted successfully.');
+    adminDataCache = adminDataCache.filter(row => row.id !== id);
+    renderAdminData(adminDataCache);
+  } catch (error) {
+    console.error('Delete Error:', error);
+    showToast('Could not delete record. Check policy permissions.');
+  }
+}
+
+function exportToCSV() {
+  if (adminDataCache.length === 0) {
+    showToast('No data to export.');
+    return;
+  }
+  
+  let csvContent = "data:text/csv;charset=utf-8,";
+  let keys = [];
+  
+  if (adminCurrentTab === 'scholarships') {
+    keys = ['student_name', 'mobile_number', 'parent_name', 'school_name', 'board', 'grade', 'olympiad', 'created_at'];
+    csvContent += "Student Name,Mobile Number,Parent Name,School Name,Board,Grade,Olympiad,Submitted At\n";
+  } else {
+    keys = ['name', 'mobile_number', 'grade', 'program', 'message', 'created_at'];
+    csvContent += "Name,Mobile Number,Grade,Program Interest,Message,Submitted At\n";
+  }
+  
+  adminDataCache.forEach(row => {
+    const line = keys.map(k => {
+      let val = row[k] ? row[k].toString().replace(/"/g, '""') : '';
+      if (k === 'created_at') val = new Date(val).toLocaleString();
+      return `"${val}"`;
+    }).join(",");
+    csvContent += line + "\n";
+  });
+  
+  const encodedUri = encodeURI(csvContent);
+  const link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  link.setAttribute("download", `vidhyasagar_${adminCurrentTab}_${new Date().toISOString().slice(0,10)}.csv`);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
 </script>
 
+<!-- HIDDEN ADMIN DASHBOARD -->
+<div id="adminOverlay" class="admin-overlay">
+  <!-- LOGIN CARD -->
+  <div id="adminLoginCard" class="admin-login-card">
+    <h2>Admin Login</h2>
+    <p>Vidhyasagar Academy Management Portal</p>
+    <div class="fg">
+      <label>Email Address</label>
+      <input type="email" id="adminEmail" placeholder="admin@domain.com" value="Vidhyasagariitacademy@gmail.com"/>
+    </div>
+    <div class="fg">
+      <label>Password</label>
+      <input type="password" id="adminPassword" placeholder="••••••••" value="vidya_Sagar2026"/>
+    </div>
+    <button onclick="handleAdminLogin()">Log In</button>
+    <button onclick="toggleAdminPanel(false)" style="background:transparent;border:1px solid var(--border);color:var(--sky-lt);margin-top:12px;cursor:pointer">Cancel</button>
+  </div>
 
+  <!-- DASHBOARD CARD -->
+  <div id="adminDashboard" class="admin-dashboard" style="display: none;">
+    <div class="admin-dash-header">
+      <h2>Admin Dashboard</h2>
+      <div class="actions">
+        <button class="admin-btn" onclick="exportToCSV()">Export to CSV</button>
+        <button class="admin-close-btn" onclick="handleAdminLogout()">Log Out</button>
+        <button class="admin-close-btn" onclick="toggleAdminPanel(false)">Close</button>
+      </div>
+    </div>
+    <div class="admin-dash-body">
+      <div class="admin-tabs">
+        <div id="tabScholarships" class="admin-tab active" onclick="switchAdminTab('scholarships')">Scholarship Applications</div>
+        <div id="tabInquiries" class="admin-tab" onclick="switchAdminTab('inquiries')">Enquiries</div>
+      </div>
+      <div class="admin-filters">
+        <input type="text" id="adminSearchInput" class="admin-search" placeholder="Search by name or mobile..." oninput="filterAdminData()"/>
+      </div>
+      <div class="admin-table-container">
+        <table class="admin-table">
+          <thead id="adminTableHead">
+            <!-- Headers inserted dynamically -->
+          </thead>
+          <tbody id="adminTableBody">
+            <!-- Rows inserted dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
